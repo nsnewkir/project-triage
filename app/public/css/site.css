@@ -14,3 +14,6 @@
   margin: 6px;
   padding: 6px;
 }
+.highPriority{
+  border-left: 4px solid red;
+}
