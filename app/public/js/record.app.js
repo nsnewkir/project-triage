@@ -1,27 +1,16 @@
-var recordApp = new Vue({
+var patientRecordApp = new Vue({
   el: '#patientRecordApp',
   data: {
-    patient:  [
-    {
-
-    }
-  ]
-},
+    patients: []
+  },
   methods: {
-      fetchPatients() {
-          //fetch('https://randomuser.me/api/')
-          fetch('dummy.php')
-          .then( response => response.json() )
-          .then( json => {recordApp.patient = json.results[0]})
-          //.then( function(result) {
-            //return result.json()
-          //} )
-          //.catch(/*function goes here*/)
-          ;
-          //thenDoThis();
-      }
+    fetchPatients() {
+      fetch('dummy.php')
+      .then(response => response.json())
+      .then(json => { patientRecordApp.patients = json })
+    }
   },
   created() {
     this.fetchPatients();
   }
-})
+});
